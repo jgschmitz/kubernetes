@@ -1,0 +1,1391 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_cse_agent_0_fileUris": {
+            "defaultValue": null,
+            "type": "Array"
+        },
+        "extensions_cse_agent_0_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_0_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_0_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_username": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_password": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_ssh_key": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_reset_ssh": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_remove_user": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_enablevmaccess_expiration": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_1_fileUris": {
+            "defaultValue": null,
+            "type": "Array"
+        },
+        "extensions_cse_agent_1_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_1_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_1_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_2_fileUris": {
+            "defaultValue": null,
+            "type": "Array"
+        },
+        "extensions_cse_agent_2_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_2_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_cse_agent_2_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "loadBalancers_kubernetes_name": {
+            "defaultValue": "kubernetes",
+            "type": "String"
+        },
+        "virtualNetworks_aks_vnet_38250421_name": {
+            "defaultValue": "aks-vnet-38250421",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_0_name": {
+            "defaultValue": "aks-agentpool-38250421-0",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_1_name": {
+            "defaultValue": "aks-agentpool-38250421-1",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_2_name": {
+            "defaultValue": "aks-agentpool-38250421-2",
+            "type": "String"
+        },
+        "routeTables_aks_agentpool_38250421_routetable_name": {
+            "defaultValue": "aks-agentpool-38250421-routetable",
+            "type": "String"
+        },
+        "dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name": {
+            "defaultValue": "9ef6e3fb03164c7a8386.eastus.aksapp.io",
+            "type": "String"
+        },
+        "networkInterfaces_aks_agentpool_38250421_nic_0_name": {
+            "defaultValue": "aks-agentpool-38250421-nic-0",
+            "type": "String"
+        },
+        "networkInterfaces_aks_agentpool_38250421_nic_1_name": {
+            "defaultValue": "aks-agentpool-38250421-nic-1",
+            "type": "String"
+        },
+        "networkInterfaces_aks_agentpool_38250421_nic_2_name": {
+            "defaultValue": "aks-agentpool-38250421-nic-2",
+            "type": "String"
+        },
+        "networkSecurityGroups_aks_agentpool_38250421_nsg_name": {
+            "defaultValue": "aks-agentpool-38250421-nsg",
+            "type": "String"
+        },
+        "availabilitySets_agentpool_availabilitySet_38250421_name": {
+            "defaultValue": "agentpool-availabilitySet-38250421",
+            "type": "String"
+        },
+        "NS_@_name": {
+            "defaultValue": "@",
+            "type": "String"
+        },
+        "SOA_@_name": {
+            "defaultValue": "@",
+            "type": "String"
+        },
+        "subnets_aks_subnet_name": {
+            "defaultValue": "aks-subnet",
+            "type": "String"
+        },
+        "publicIPAddresses_kubernetes_a095355328c2d11e8af8c7265e7a0c23_name": {
+            "defaultValue": "kubernetes-a095355328c2d11e8af8c7265e7a0c23",
+            "type": "String"
+        },
+        "extensions_cse_agent_0_name": {
+            "defaultValue": "cse-agent-0",
+            "type": "String"
+        },
+        "extensions_cse_agent_1_name": {
+            "defaultValue": "cse-agent-1",
+            "type": "String"
+        },
+        "extensions_cse_agent_2_name": {
+            "defaultValue": "cse-agent-2",
+            "type": "String"
+        },
+        "extensions_enablevmaccess_name": {
+            "defaultValue": "enablevmaccess",
+            "type": "String"
+        },
+        "securityRules_allow_ssh_name": {
+            "defaultValue": "allow_ssh",
+            "type": "String"
+        },
+        "securityRules_allow_kube_tls_name": {
+            "defaultValue": "allow_kube_tls",
+            "type": "String"
+        },
+        "routes_aks_agentpool_38250421_0_name": {
+            "defaultValue": "aks-agentpool-38250421-0",
+            "type": "String"
+        },
+        "routes_aks_agentpool_38250421_2_name": {
+            "defaultValue": "aks-agentpool-38250421-2",
+            "type": "String"
+        },
+        "routes_aks_agentpool_38250421_1_name": {
+            "defaultValue": "aks-agentpool-38250421-1",
+            "type": "String"
+        },
+        "securityRules_a095355328c2d11e8af8c7265e7a0c23_TCP_80_Internet_name": {
+            "defaultValue": "a095355328c2d11e8af8c7265e7a0c23-TCP-80-Internet",
+            "type": "String"
+        },
+        "securityRules_a095355328c2d11e8af8c7265e7a0c23_TCP_443_Internet_name": {
+            "defaultValue": "a095355328c2d11e8af8c7265e7a0c23-TCP-443-Internet",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_0_id": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/disks/aks-agentpool-38250421-0_OsDisk_1_35bb93a82718417d84fd8e6dfa205db5",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_1_id": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/disks/aks-agentpool-38250421-1_OsDisk_1_bbeccdb7489e43a68b7a273bcca9eb9a",
+            "type": "String"
+        },
+        "virtualMachines_aks_agentpool_38250421_2_id": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/disks/aks-agentpool-38250421-2_OsDisk_1_0427963b7206483f89d32669329169ef",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/frontendIPConfigurations/a095355328c2d11e8af8c7265e7a0c23",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id_1": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/backendAddressPools/kubernetes",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id_2": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/probes/a095355328c2d11e8af8c7265e7a0c23-TCP-80",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id_3": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/frontendIPConfigurations/a095355328c2d11e8af8c7265e7a0c23",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id_4": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/backendAddressPools/kubernetes",
+            "type": "String"
+        },
+        "loadBalancers_kubernetes_id_5": {
+            "defaultValue": "/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes/probes/a095355328c2d11e8af8c7265e7a0c23-TCP-443",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/availabilitySets/agentpool-availabilitySet-38250421'.",
+            "type": "Microsoft.Compute/availabilitySets",
+            "sku": {
+                "name": "Aligned"
+            },
+            "name": "[parameters('availabilitySets_agentpool_availabilitySet_38250421_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "platformUpdateDomainCount": 3,
+                "platformFaultDomainCount": 2,
+                "virtualMachines": [
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_0_name'))]"
+                    },
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_1_name'))]"
+                    },
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_2_name'))]"
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_1_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_aks_agentpool_38250421_0_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "tags": {
+                "acsengineVersion": "v0.19.2-aks",
+                "creationSource": "aks-aks-agentpool-38250421-0",
+                "orchestrator": "Kubernetes:1.10.5",
+                "poolName": "agentpool",
+                "resourceNameSuffix": "38250421"
+            },
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201806220"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_0_name'),'_OsDisk_1_35bb93a82718417d84fd8e6dfa205db5')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('virtualMachines_aks_agentpool_38250421_0_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_aks_agentpool_38250421_0_name')]",
+                    "adminUsername": "azureuser",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/azureuser/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz/utTfeA53J9jNvfw0vgU8Ps+oVuOf7YUXrTkTWiw8IVcbFLsCIt1XU/bRIybIAN09y79aARf+Po1UcFVIp/3XLNUy15D3huPDmrOEkmEezzCzYHFjadOifL+j68cHNJu/s17U4qaruCt+q5ejsAglfC1JUkWjbOrMam5RVjmsWoRi9uNTE3HuGd9Ym8w9GNtDnzfur14/9Notz4VHtSil9gFyDtcX49SmQk695nR04VGiiDJpgfrbJUygOnyZwsmaKX1Kklh8a18laSkntKoF1c0D3pCWomBPcAhx9WgUR+HtKkbE+QXOwlQtm3JmedUgaAWoEZU6brpyXNnI59XYd2C+4BjEJBk6uNOeC5ZV6nzpyJvk+TFLI19oTl8F42QUK8O3EE/T8XIWcULmMDiJ4RYGMjYFckaP35X9luIo+ex1++6KbbKowX3kYmChCNjF72RvYYfIqMifjgf+muK8Z0IC8w2kP9NxwgMcK1ZTEYZn6Q4PAsSVeNaW3BFNvdOhNR1+tUqSZbkst7suE19qDWAfetk7fSiLTUu/YMxDTtLu/+pn7kjXMbjBuu6+UXMn39SZhyxRCpBflMrLwudcFBUMoLlN07mHDTDFlssuK99gTV3zqMKS+rtUMrIgSyqabAZ/0XVuRMQ+P1VEqXop0qZbtXoPPIAdN78xN4riQ==\n"
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_0_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-1'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_aks_agentpool_38250421_1_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "tags": {
+                "acsengineVersion": "v0.19.2-aks",
+                "creationSource": "aks-aks-agentpool-38250421-1",
+                "orchestrator": "Kubernetes:1.10.5",
+                "poolName": "agentpool",
+                "resourceNameSuffix": "38250421"
+            },
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201806220"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_1_name'),'_OsDisk_1_bbeccdb7489e43a68b7a273bcca9eb9a')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('virtualMachines_aks_agentpool_38250421_1_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_aks_agentpool_38250421_1_name')]",
+                    "adminUsername": "azureuser",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/azureuser/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz/utTfeA53J9jNvfw0vgU8Ps+oVuOf7YUXrTkTWiw8IVcbFLsCIt1XU/bRIybIAN09y79aARf+Po1UcFVIp/3XLNUy15D3huPDmrOEkmEezzCzYHFjadOifL+j68cHNJu/s17U4qaruCt+q5ejsAglfC1JUkWjbOrMam5RVjmsWoRi9uNTE3HuGd9Ym8w9GNtDnzfur14/9Notz4VHtSil9gFyDtcX49SmQk695nR04VGiiDJpgfrbJUygOnyZwsmaKX1Kklh8a18laSkntKoF1c0D3pCWomBPcAhx9WgUR+HtKkbE+QXOwlQtm3JmedUgaAWoEZU6brpyXNnI59XYd2C+4BjEJBk6uNOeC5ZV6nzpyJvk+TFLI19oTl8F42QUK8O3EE/T8XIWcULmMDiJ4RYGMjYFckaP35X9luIo+ex1++6KbbKowX3kYmChCNjF72RvYYfIqMifjgf+muK8Z0IC8w2kP9NxwgMcK1ZTEYZn6Q4PAsSVeNaW3BFNvdOhNR1+tUqSZbkst7suE19qDWAfetk7fSiLTUu/YMxDTtLu/+pn7kjXMbjBuu6+UXMn39SZhyxRCpBflMrLwudcFBUMoLlN07mHDTDFlssuK99gTV3zqMKS+rtUMrIgSyqabAZ/0XVuRMQ+P1VEqXop0qZbtXoPPIAdN78xN4riQ==\n"
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_1_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-2'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_aks_agentpool_38250421_2_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "tags": {
+                "acsengineVersion": "v0.19.2-aks",
+                "creationSource": "aks-aks-agentpool-38250421-2",
+                "orchestrator": "Kubernetes:1.10.5",
+                "poolName": "agentpool",
+                "resourceNameSuffix": "38250421"
+            },
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "16.04.201806220"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_2_name'),'_OsDisk_1_0427963b7206483f89d32669329169ef')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('virtualMachines_aks_agentpool_38250421_2_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_aks_agentpool_38250421_2_name')]",
+                    "adminUsername": "azureuser",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/azureuser/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz/utTfeA53J9jNvfw0vgU8Ps+oVuOf7YUXrTkTWiw8IVcbFLsCIt1XU/bRIybIAN09y79aARf+Po1UcFVIp/3XLNUy15D3huPDmrOEkmEezzCzYHFjadOifL+j68cHNJu/s17U4qaruCt+q5ejsAglfC1JUkWjbOrMam5RVjmsWoRi9uNTE3HuGd9Ym8w9GNtDnzfur14/9Notz4VHtSil9gFyDtcX49SmQk695nR04VGiiDJpgfrbJUygOnyZwsmaKX1Kklh8a18laSkntKoF1c0D3pCWomBPcAhx9WgUR+HtKkbE+QXOwlQtm3JmedUgaAWoEZU6brpyXNnI59XYd2C+4BjEJBk6uNOeC5ZV6nzpyJvk+TFLI19oTl8F42QUK8O3EE/T8XIWcULmMDiJ4RYGMjYFckaP35X9luIo+ex1++6KbbKowX3kYmChCNjF72RvYYfIqMifjgf+muK8Z0IC8w2kP9NxwgMcK1ZTEYZn6Q4PAsSVeNaW3BFNvdOhNR1+tUqSZbkst7suE19qDWAfetk7fSiLTUu/YMxDTtLu/+pn7kjXMbjBuu6+UXMn39SZhyxRCpBflMrLwudcFBUMoLlN07mHDTDFlssuK99gTV3zqMKS+rtUMrIgSyqabAZ/0XVuRMQ+P1VEqXop0qZbtXoPPIAdN78xN4riQ==\n"
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_2_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_agentpool_availabilitySet_38250421_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_aks_agentpool_38250421_nic_2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/mc_k8s_sanchezkubes_eastus/providers/Microsoft.Network/dnszones/9ef6e3fb03164c7a8386.eastus.aksapp.io'.",
+            "type": "Microsoft.Network/dnszones",
+            "name": "[parameters('dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "global",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "maxNumberOfRecordSets": 5000,
+                "nameServers": [
+                    "ns1-01.azure-dns.com.",
+                    "ns2-01.azure-dns.net.",
+                    "ns3-01.azure-dns.org.",
+                    "ns4-01.azure-dns.info."
+                ],
+                "numberOfRecordSets": 2,
+                "zoneType": "Public"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/loadBalancers/kubernetes'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('loadBalancers_kubernetes_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "2898f82b-a9eb-42d5-9c20-379bd16580c7",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_kubernetes_a095355328c2d11e8af8c7265e7a0c23_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "[parameters('loadBalancers_kubernetes_name')]",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-80",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_kubernetes_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": true,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_kubernetes_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_kubernetes_id_2')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-443",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_kubernetes_id_3')]"
+                            },
+                            "frontendPort": 443,
+                            "backendPort": 443,
+                            "enableFloatingIP": true,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_kubernetes_id_4')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_kubernetes_id_5')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-80",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Http",
+                            "port": 32715,
+                            "requestPath": "/healthz",
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-443",
+                        "etag": "W/\"f3ef4031-4d32-415d-9d96-fae01ad4ef43\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Http",
+                            "port": 32715,
+                            "requestPath": "/healthz",
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    }
+                ],
+                "inboundNatRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_kubernetes_a095355328c2d11e8af8c7265e7a0c23_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkInterfaces/aks-agentpool-38250421-nic-0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_aks_agentpool_38250421_nic_0_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "786e25b7-bc1b-47e9-b390-0145c57c8e02",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"d855ae6f-6d53-49a3-b1f8-67d10597c0dd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.240.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name')), '/backendAddressPools/kubernetes')]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "ljhibhafud5udlcibjub41d1hd.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-4D-FD-BF",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": true,
+                "primary": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkInterfaces/aks-agentpool-38250421-nic-1'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_aks_agentpool_38250421_nic_1_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "46871e56-a3fb-40be-a16d-b5990db6bd67",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"4f70440e-a011-47f8-8b0b-38916f681baa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.240.0.5",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name')), '/backendAddressPools/kubernetes')]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "ljhibhafud5udlcibjub41d1hd.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-4D-F6-52",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": true,
+                "primary": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkInterfaces/aks-agentpool-38250421-nic-2'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_aks_agentpool_38250421_nic_2_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "7adba6d4-6f58-496d-a256-061a7e68b258",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"11b14c48-9763-4dea-a585-f8f912ca600f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.240.0.6",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name')), '/backendAddressPools/kubernetes')]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "ljhibhafud5udlcibjub41d1hd.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-4D-F9-0C",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": true,
+                "primary": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_aks_vnet_38250421_name'), parameters('subnets_aks_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_kubernetes_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkSecurityGroups/aks-agentpool-38250421-nsg'.",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "219770c5-806c-4990-9650-35979f1d1aac",
+                "securityRules": [
+                    {
+                        "name": "allow_ssh",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow SSH traffic to master",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22-22",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 101,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "allow_kube_tls",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow kube-apiserver (tls) traffic to master",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443-443",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-80-Internet",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "80",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "40.76.38.67",
+                            "access": "Allow",
+                            "priority": 500,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "a095355328c2d11e8af8c7265e7a0c23-TCP-443-Internet",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "443",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "40.76.38.67",
+                            "access": "Allow",
+                            "priority": 501,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ],
+                "defaultSecurityRules": [
+                    {
+                        "name": "AllowVnetInBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowAzureLoadBalancerInBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from azure load balancer",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "AzureLoadBalancer",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllInBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all inbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowVnetOutBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowInternetOutBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to Internet",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "Internet",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllOutBound",
+                        "etag": "W/\"8bc9cc29-b294-44cb-9b9b-5cf985fe2ffa\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all outbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/publicIPAddresses/kubernetes-a095355328c2d11e8af8c7265e7a0c23'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_kubernetes_a095355328c2d11e8af8c7265e7a0c23_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "tags": {
+                "service": "kube-system/addon-http-application-routing-nginx-ingress"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "e8d007bb-583d-4bf7-b6f3-83b9f047f570",
+                "ipAddress": "40.76.38.67",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "k8sanchez",
+                    "fqdn": "k8sanchez.eastus.cloudapp.azure.com"
+                },
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/routeTables/aks-agentpool-38250421-routetable'.",
+            "type": "Microsoft.Network/routeTables",
+            "name": "[parameters('routeTables_aks_agentpool_38250421_routetable_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "disableBgpRoutePropagation": false,
+                "routes": [
+                    {
+                        "name": "aks-agentpool-38250421-0",
+                        "etag": "W/\"cec4ea39-8b40-43b9-bf46-72c030c90844\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.244.0.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.240.0.4"
+                        }
+                    },
+                    {
+                        "name": "aks-agentpool-38250421-2",
+                        "etag": "W/\"cec4ea39-8b40-43b9-bf46-72c030c90844\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.244.1.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.240.0.6"
+                        }
+                    },
+                    {
+                        "name": "aks-agentpool-38250421-1",
+                        "etag": "W/\"cec4ea39-8b40-43b9-bf46-72c030c90844\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.244.2.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.240.0.5"
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/virtualNetworks/aks-vnet-38250421'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_aks_vnet_38250421_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "9c804e5a-a005-41ff-ac48-0a681f6c7b3b",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/8"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "aks-subnet",
+                        "etag": "W/\"d80021c9-0b38-4002-8d3d-57f73cccd289\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.240.0.0/16",
+                            "networkSecurityGroup": {
+                                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+                            },
+                            "routeTable": {
+                                "id": "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]",
+                "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-0/extensions/cse-agent-0'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_0_name'), '/', parameters('extensions_cse_agent_0_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": "[parameters('extensions_cse_agent_0_fileUris')]"
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_cse_agent_0_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_cse_agent_0_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_cse_agent_0_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-0/extensions/enablevmaccess'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_0_name'), '/', parameters('extensions_enablevmaccess_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {},
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "VMAccessForLinux",
+                "typeHandlerVersion": "1.4",
+                "protectedSettings": {
+                    "username": "[parameters('extensions_enablevmaccess_username')]",
+                    "password": "[parameters('extensions_enablevmaccess_password')]",
+                    "ssh_key": "[parameters('extensions_enablevmaccess_ssh_key')]",
+                    "reset_ssh": "[parameters('extensions_enablevmaccess_reset_ssh')]",
+                    "remove_user": "[parameters('extensions_enablevmaccess_remove_user')]",
+                    "expiration": "[parameters('extensions_enablevmaccess_expiration')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-1/extensions/cse-agent-1'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_1_name'), '/', parameters('extensions_cse_agent_1_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": "[parameters('extensions_cse_agent_1_fileUris')]"
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_cse_agent_1_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_cse_agent_1_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_cse_agent_1_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_1_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-38250421-2/extensions/cse-agent-2'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_aks_agentpool_38250421_2_name'), '/', parameters('extensions_cse_agent_2_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": "[parameters('extensions_cse_agent_2_fileUris')]"
+                },
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_cse_agent_2_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_cse_agent_2_storageAccountKey')]",
+                    "commandToExecute": "[parameters('extensions_cse_agent_2_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_aks_agentpool_38250421_2_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/mc_k8s_sanchezkubes_eastus/providers/Microsoft.Network/dnszones/9ef6e3fb03164c7a8386.eastus.aksapp.io/NS/@'.",
+            "type": "Microsoft.Network/dnszones/NS",
+            "name": "[concat(parameters('dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name'), '/', parameters('NS_@_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "TTL": 172800,
+                "NSRecords": [
+                    {
+                        "nsdname": "ns1-01.azure-dns.com."
+                    },
+                    {
+                        "nsdname": "ns2-01.azure-dns.net."
+                    },
+                    {
+                        "nsdname": "ns3-01.azure-dns.org."
+                    },
+                    {
+                        "nsdname": "ns4-01.azure-dns.info."
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/dnszones', parameters('dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/mc_k8s_sanchezkubes_eastus/providers/Microsoft.Network/dnszones/9ef6e3fb03164c7a8386.eastus.aksapp.io/SOA/@'.",
+            "type": "Microsoft.Network/dnszones/SOA",
+            "name": "[concat(parameters('dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name'), '/', parameters('SOA_@_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "TTL": 3600,
+                "SOARecord": {
+                    "email": "azuredns-hostmaster.microsoft.com",
+                    "expireTime": 2419200,
+                    "host": "ns1-01.azure-dns.com.",
+                    "minimumTTL": 300,
+                    "refreshTime": 3600,
+                    "retryTime": 300,
+                    "serialNumber": 1
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/dnszones', parameters('dnszones_9ef6e3fb03164c7a8386.eastus.aksapp.io_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkSecurityGroups/aks-agentpool-38250421-nsg/securityRules/allow_ssh'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'), '/', parameters('securityRules_allow_ssh_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "description": "Allow SSH traffic to master",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "22-22",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 101,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkSecurityGroups/aks-agentpool-38250421-nsg/securityRules/allow_kube_tls'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'), '/', parameters('securityRules_allow_kube_tls_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "description": "Allow kube-apiserver (tls) traffic to master",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443-443",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 100,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkSecurityGroups/aks-agentpool-38250421-nsg/securityRules/a095355328c2d11e8af8c7265e7a0c23-TCP-80-Internet'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'), '/', parameters('securityRules_a095355328c2d11e8af8c7265e7a0c23_TCP_80_Internet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "80",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "40.76.38.67",
+                "access": "Allow",
+                "priority": 500,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/networkSecurityGroups/aks-agentpool-38250421-nsg/securityRules/a095355328c2d11e8af8c7265e7a0c23-TCP-443-Internet'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'), '/', parameters('securityRules_a095355328c2d11e8af8c7265e7a0c23_TCP_443_Internet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "40.76.38.67",
+                "access": "Allow",
+                "priority": 501,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/routeTables/aks-agentpool-38250421-routetable/routes/aks-agentpool-38250421-0'.",
+            "type": "Microsoft.Network/routeTables/routes",
+            "name": "[concat(parameters('routeTables_aks_agentpool_38250421_routetable_name'), '/', parameters('routes_aks_agentpool_38250421_0_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.244.0.0/24",
+                "nextHopType": "VirtualAppliance",
+                "nextHopIpAddress": "10.240.0.4"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/routeTables/aks-agentpool-38250421-routetable/routes/aks-agentpool-38250421-2'.",
+            "type": "Microsoft.Network/routeTables/routes",
+            "name": "[concat(parameters('routeTables_aks_agentpool_38250421_routetable_name'), '/', parameters('routes_aks_agentpool_38250421_2_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.244.1.0/24",
+                "nextHopType": "VirtualAppliance",
+                "nextHopIpAddress": "10.240.0.6"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/routeTables/aks-agentpool-38250421-routetable/routes/aks-agentpool-38250421-1'.",
+            "type": "Microsoft.Network/routeTables/routes",
+            "name": "[concat(parameters('routeTables_aks_agentpool_38250421_routetable_name'), '/', parameters('routes_aks_agentpool_38250421_1_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.244.2.0/24",
+                "nextHopType": "VirtualAppliance",
+                "nextHopIpAddress": "10.240.0.5"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/d4dcb193-6fd1-4e74-9371-2f4664fc92ac/resourceGroups/MC_k8s_sanchezkubes_eastus/providers/Microsoft.Network/virtualNetworks/aks-vnet-38250421/subnets/aks-subnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_aks_vnet_38250421_name'), '/', parameters('subnets_aks_subnet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.240.0.0/16",
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]"
+                },
+                "routeTable": {
+                    "id": "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_aks_vnet_38250421_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_aks_agentpool_38250421_nsg_name'))]",
+                "[resourceId('Microsoft.Network/routeTables', parameters('routeTables_aks_agentpool_38250421_routetable_name'))]"
+            ]
+        }
+    ]
+}
