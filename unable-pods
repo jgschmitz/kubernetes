@@ -1,3 +1,4 @@
+#best practises
 1）swapoff -a to close swap .
 2) disable selinux.
 3) #vi /etc/sysctl.d/k8s.conf
