@@ -1,5 +1,5 @@
 kubectl apply --filename https://git.io/weave-kube-1.6
-serviceaccount/weave-net created
+serviceaccount/weave-net create
 clusterrole.rbac.authorization.k8s.io/weave-net created
 clusterrolebinding.rbac.authorization.k8s.io/weave-net created
 role.rbac.authorization.k8s.io/weave-net created
